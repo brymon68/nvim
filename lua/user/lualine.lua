@@ -106,13 +106,11 @@ local filetype = {
       "packer",
       "neogitstatus",
       "NvimTree",
-      "Trouble",
       "lir",
       "Outline",
       "spectre_panel",
       "toggleterm",
       "DressingSelect",
-      "",
     }
 
     if str == "toggleterm" then
@@ -135,18 +133,18 @@ local filetype = {
   icons_enabled = true,
 }
 
-local branch = {
-  "branch",
-  icons_enabled = true,
-  icon = "%#SLGitIcon#" .. "" .. "%*" .. "%#SLBranchName#",
-  -- color = "Constant",
-  colored = false,
-}
+-- local branch = {
+--   "branch",
+--   icons_enabled = true,
+--   icon = "%#SLGitIcon#" .. "" .. "%*" .. "%#SLBranchName#",
+--   -- color = "Constant",
+--   colored = false,
+-- }
 
-local progress = {
-  "progress",
-  color = "SLProgress",
-}
+-- local progress = {
+--   "progress",
+--   color = "SLProgress",
+-- }
 
 local current_signature = {
   function()
@@ -181,7 +179,6 @@ local spaces = {
       "packer",
       "neogitstatus",
       "NvimTree",
-      "Trouble",
       "lir",
       "Outline",
       "spectre_panel",
@@ -210,7 +207,6 @@ local lanuage_server = {
       "packer",
       "neogitstatus",
       "NvimTree",
-      "Trouble",
       "lir",
       "Outline",
       "spectre_panel",
@@ -283,7 +279,7 @@ lualine.setup {
   options = {
     globalstatus = true,
     icons_enabled = true,
-    theme = "auto",
+    theme = "ayu_mirage",
     --theme = theme,
     component_separators = { left = "", right = "" },
     section_separators = { left = "", right = "" },
@@ -291,20 +287,18 @@ lualine.setup {
     always_divide_middle = true,
   },
   sections = {
-    lualine_a = { mode, branch },
-    lualine_b = { diagnostics },
-    -- lualine_c = {},
+    lualine_a = { mode},
+    lualine_b = {diagnostics},
     lualine_c = { current_signature },
     -- lualine_x = { diff, spaces, "encoding", filetype },
     lualine_x = { diff, lanuage_server, spaces, filetype },
-    lualine_y = { progress },
-    lualine_z = { location },
+    lualine_y = { 'filename' },
+    lualine_z = { "os.date('%a')", 'data', "require'lsp-status'.status()"  }
   },
   inactive_sections = {
     lualine_a = {},
     lualine_b = {},
     lualine_c = {},
-    lualine_x = { "location" },
     lualine_y = {},
     lualine_z = {},
   },

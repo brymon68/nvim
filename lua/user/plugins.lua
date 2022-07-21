@@ -64,7 +64,6 @@ return packer.startup(function(use)
 	use("windwp/nvim-spectre")
 	use("kevinhwang91/nvim-bqf")
 	use("MattesGroeger/vim-bookmarks")
-	use({ "michaelb/sniprun", run = "bash ./install.sh" })
 
 	-- UI
 	use("stevearc/dressing.nvim")
@@ -92,7 +91,7 @@ return packer.startup(function(use)
 		"catppuccin/nvim",
 		as = "catppuccin",
 	})
-	vim.cmd([[colorscheme catppuccin]])
+	-- vim.cmd([[colorscheme catppuccin]])
 	-- cmp plugins
 	use({ "hrsh7th/nvim-cmp" })
 	use("hrsh7th/cmp-buffer") -- buffer completions
@@ -116,6 +115,10 @@ return packer.startup(function(use)
 
 	-- TODO: set this up
 	use("nvim-lua/lsp_extensions.nvim")
+  -- cutlass
+  use({
+    "gbprod/cutlass.nvim",
+  })
 
 	-- Typescript TODO: set this up, also add keybinds to ftplugin
 	use("jose-elias-alvarez/typescript.nvim")
@@ -124,6 +127,16 @@ return packer.startup(function(use)
 	use("nvim-telescope/telescope.nvim")
 	use("tom-anders/telescope-vim-bookmarks.nvim")
 	use("nvim-telescope/telescope-media-files.nvim")
+    use {
+      "ahmedkhalf/project.nvim",
+      config = function()
+        require("project_nvim").setup {
+          -- your configuration comes here
+          -- or leave it empty to use the default settings
+          -- refer to the configuration section below
+        }
+      end
+    }
 	use("lalitmee/browse.nvim")
 
 	-- Treesitter

@@ -2,6 +2,9 @@ local status_ok, which_key = pcall(require, "which-key")
 if not status_ok then
 	return
 end
+if not pcall(require, "telescope") then
+	return
+end
 
 local setup = {
 	plugins = {
@@ -48,6 +51,7 @@ local setup = {
 		padding = { 2, 2, 2, 2 }, -- extra window padding [top, right, bottom, left]
 		winblend = 0,
 	},
+
 	layout = {
 		height = { min = 4, max = 25 }, -- min and max height of the columns
 		width = { min = 20, max = 50 }, -- min and max width of the columns
@@ -93,55 +97,26 @@ local m_mappings = {
 	j = { "<cmd>silent BookmarkNext<cr>", "Next" },
 	k = { "<cmd>silent BookmarkPrev<cr>", "Prev" },
 	S = { "<cmd>silent BookmarkShowAll<cr>", "Prev" },
-	-- s = {
-	--   "<cmd>lua require('telescope').extensions.vim_bookmarks.all({ hide_filename=false, prompt_title=\"bookmarks\", shorten_path=false })<cr>",
-	--   "Show",
-	-- },
+	s = {
+		"<cmd>lua require('telescope').extensions.vim_bookmarks.all({ hide_filename=false, prompt_title=\"bookmarks\", shorten_path=false })<cr>",
+		"Show",
+	},
 	["q"] = { "<cmd>lua require('user.functions').smart_quit()<CR>", "Quit" },
 	x = { "<cmd>BookmarkClearAll<cr>", "Clear All" },
 }
 
 local mappings = {
 	["a"] = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Action" },
-	-- b = { "<cmd>lua require('user.bfs').open()<cr>", "Buffers" },
-	b = {
-		"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{ initial_mode='normal'})<cr>",
-		"Find files",
-	},
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 	["w"] = { "<cmd>w<CR>", "Write" },
 	["q"] = { '<cmd>lua require("user.functions").smart_quit()<CR>', "Quit" },
-	["/"] = { '<cmd>lua require("Comment.api").toggle_current_linewise()<CR>', "Comment" },
+	["v"] = { '<cmd>lua require("user.telescope").edit_neovim()<CR>', "Edit neovim config" },
 	["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
 	["z"] = { "<cmd>ZenMode<cr>", "Zen" },
-	["gy"] = "Link",
-
-	B = {
-		name = "Browse",
-		i = { "<cmd>BrowseInputSearch<cr>", "Input Search" },
-		b = { "<cmd>Browse<cr>", "Browse" },
-		d = { "<cmd>BrowseDevdocsSearch<cr>", "Devdocs" },
-		f = { "<cmd>BrowseDevdocsFiletypeSearch<cr>", "Devdocs Filetype" },
-		m = { "<cmd>BrowseMdnSearch<cr>", "Mdn" },
-	},
-
-	p = {
-		name = "Packer",
-		c = { "<cmd>PackerCompile<cr>", "Compile" },
-		i = { "<cmd>PackerInstall<cr>", "Install" },
-		s = { "<cmd>PackerSync<cr>", "Sync" },
-		S = { "<cmd>PackerStatus<cr>", "Status" },
-		u = { "<cmd>PackerUpdate<cr>", "Update" },
-	},
-
-	-- o = {
-	--   name = "Options",
-	--   w = { '<cmd>lua require("user.functions").toggle_option("wrap")<cr>', "Wrap" },
-	--   r = { '<cmd>lua require("user.functions").toggle_option("relativenumber")<cr>', "Relative" },
-	--   l = { '<cmd>lua require("user.functions").toggle_option("cursorline")<cr>', "Cursorline" },
-	--   s = { '<cmd>lua require("user.functions").toggle_option("spell")<cr>', "Spell" },
-	--   t = { '<cmd>lua require("user.functions").toggle_tabline()<cr>', "Tabline" },
-	-- },
+	["b"] = { "<cmd>Browse<cr>", "Browse" },
+	["="] = { "<cmd>NvimTreeResize +5<cr>", "Inc. explorer width" },
+	["-"] = { "<cmd>NvimTreeResize -5<cr>", "Dec explorer width" },
+	["/"] = { '<cmd>lua require("Comment.api").toggle_current_linewise()<CR>', "Comment" },
 
 	s = {
 		name = "Split",
@@ -177,7 +152,7 @@ local mappings = {
 			"<cmd>lua require('telescope.builtin').find_files()<cr>",
 			"Find files",
 		},
-		t = { "<cmd>Telescope live_grep<cr>", "Find Text" },
+		g = { "<cmd>Telescope live_grep<cr>", "Find Text" },
 		h = { "<cmd>Telescope help_tags<cr>", "Help" },
 		l = { "<cmd>Telescope resume<cr>", "Last Search" },
 		M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
@@ -187,10 +162,20 @@ local mappings = {
 		C = { "<cmd>Telescope commands<cr>", "Commands" },
 	},
 
+	g = {
+		name = "Git",
+		o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
+		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
+		c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
+		d = {
+			"<cmd>Gitsigns diffthis HEAD<cr>",
+			"Git Diff",
+		},
+	},
+
 	l = {
 		name = "LSP",
 		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-		d = { "<cmd>TroubleToggle<cr>", "Diagnostics" },
 		w = {
 			"<cmd>Telescope lsp_workspace_diagnostics<cr>",
 			"Workspace Diagnostics",
@@ -222,17 +207,6 @@ local mappings = {
 		u = { "<cmd>LuaSnipUnlinkCurrent<cr>", "Unlink Snippet" },
 	},
 
-	S = {
-		name = "SnipRun",
-		c = { "<cmd>SnipClose<cr>", "Close" },
-		f = { "<cmd>%SnipRun<cr>", "Run File" },
-		i = { "<cmd>SnipInfo<cr>", "Info" },
-		m = { "<cmd>SnipReplMemoryClean<cr>", "Mem Clean" },
-		r = { "<cmd>SnipReset<cr>", "Reset" },
-		t = { "<cmd>SnipRunToggle<cr>", "Toggle" },
-		x = { "<cmd>SnipTerminate<cr>", "Terminate" },
-	},
-
 	t = {
 		name = "Terminal",
 		["1"] = { ":1ToggleTerm<cr>", "1" },
@@ -240,7 +214,6 @@ local mappings = {
 		["3"] = { ":3ToggleTerm<cr>", "3" },
 		["4"] = { ":4ToggleTerm<cr>", "4" },
 		n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
-		u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
 		t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
 		p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
 		f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
@@ -265,7 +238,6 @@ local vopts = {
 }
 local vmappings = {
 	["/"] = { '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>', "Comment" },
-	s = { "<esc><cmd>'<,'>SnipRun<cr>", "Run range" },
 }
 
 which_key.setup(setup)

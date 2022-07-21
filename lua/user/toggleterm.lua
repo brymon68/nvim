@@ -5,7 +5,7 @@ end
 
 toggleterm.setup {
   size = 20,
-  open_mapping = [[<m-0>]],
+  open_mapping = [[<c-t>]],
   hide_numbers = true,
   shade_filetypes = {},
   shade_terminals = true,
@@ -63,11 +63,6 @@ function _NODE_TOGGLE()
   node:toggle()
 end
 
-local ncdu = Terminal:new { cmd = "ncdu", hidden = true }
-
-function _NCDU_TOGGLE()
-  ncdu:toggle()
-end
 
 local htop = Terminal:new { cmd = "htop", hidden = true }
 
@@ -81,17 +76,6 @@ function _PYTHON_TOGGLE()
   python:toggle()
 end
 
-local cargo_run = Terminal:new { cmd = "cargo run", hidden = true }
-
-function _CARGO_RUN()
-  cargo_run:toggle()
-end
-
-local cargo_test = Terminal:new { cmd = "cargo test", hidden = true }
-
-function _CARGO_TEST()
-  cargo_test:toggle()
-end
 
 local float_term = Terminal:new {
   direction = "float",
