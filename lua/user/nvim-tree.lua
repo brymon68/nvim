@@ -11,14 +11,15 @@ end
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup({
+  -- lets you do nvim . or nvim some_dir/
 	hijack_directories = {
-		enable = false,
+		enable = true,
 	},
 	-- update_to_buf_dir = {
 	--   enable = false,
 	-- },
-	-- disable_netrw = true,
-	-- hijack_netrw = true,
+	disable_netrw = true,
+	hijack_netrw = true,
 	-- open_on_setup = false,
 	ignore_ft_on_setup = {
 		"startify",
@@ -37,11 +38,6 @@ nvim_tree.setup({
 	--   enable = true,
 	--   auto_open = true,
 	-- },
-	-- --   error
-	-- --   info
-	-- --   question
-	-- --   warning
-	-- --   lightbulb
 	renderer = {
 		add_trailing = false,
 		group_empty = false,

@@ -9,6 +9,7 @@ require("user.lsp")
 require("user.telescope")
 require("user.treesitter")
 require("user.autopairs")
+require("user.autocommands")
 require("user.comment")
 require("user.gitsigns")
 require("user.lualine")
@@ -18,4 +19,7 @@ require("user.toggleterm")
 require("user.impatient")
 require("user.indentline")
 require("user.whichkey")
-require "user.project"
+require("user.project")
+
+-- this will stop random things highlighting that shouldn't
+require("user.illuminate")
