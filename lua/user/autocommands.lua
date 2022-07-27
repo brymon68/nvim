@@ -112,11 +112,11 @@
 -- end
 -- -- require "user.winbar"
 --
--- vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
--- 	callback = function()
--- 		vim.cmd("set formatoptions-=cro")
--- 	end,
--- })
+vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
+	callback = function()
+		vim.cmd("set formatoptions-=cro")
+	end,
+})
 --
 -- vim.api.nvim_create_autocmd({ "TextYankPost" }, {
 -- 	callback = function()
@@ -161,3 +161,10 @@ vim.cmd([[
     autocmd User AlphaReady set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2
   augroup end
 ]])
+
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+	pattern = { "*.ts" },
+	callback = function()
+		vim.lsp.buf.format({ async = true })
+	end,
+})

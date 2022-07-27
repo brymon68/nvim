@@ -17,15 +17,15 @@ dashboard.section.header.val = {
 dashboard.section.buttons.val = {
    dashboard.button(
     "p",
-    " Recent projects",
+    "  Recent projects",
     ":lua require('telescope').extensions.projects.projects()<CR>"
   ),
-  dashboard.button("f", " Find file", ":Telescope find_files <CR>"),
-  dashboard.button("t", " Search text", ":Telescope live_grep <CR>"),
-  dashboard.button("r", " Find recent file", ":Telescope oldfiles <CR>"),
-  dashboard.button("e", " Edit Configuration", "<cmd>lua require('user.telescope').edit_neovim()<CR>"),
-  dashboard.button("u", " PackerSync", ":PackerSync<CR>"),
-  dashboard.button("q", " Quit Neovim", ":qa<CR>"),
+  dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
+  dashboard.button("t", "  Search text", ":Telescope live_grep <CR>"),
+  dashboard.button("r", "  Find recent file", ":Telescope oldfiles <CR>"),
+  dashboard.button("e", "  Edit Configuration", "<cmd>lua require('user.telescope').edit_neovim()<CR>"),
+  dashboard.button("u", "  PackerSync", ":PackerSync<CR>"),
+  dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
 }
 local function footer()
   return "brycesec@amazon.com"
