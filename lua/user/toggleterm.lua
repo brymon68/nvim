@@ -70,10 +70,16 @@ function _HTOP_TOGGLE()
   htop:toggle()
 end
 
-local python = Terminal:new { cmd = "python", hidden = true }
+local python = Terminal:new { cmd = "python3", hidden = true }
 
 function _PYTHON_TOGGLE()
   python:toggle()
+end
+
+--frontend dev
+local fdev = Terminal:new { cmd = "bb start", hidden = false }
+function _DEV_TOGGLE()
+  fdev:toggle()
 end
 
 

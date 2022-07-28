@@ -106,17 +106,14 @@ local m_mappings = {
 }
 
 local mappings = {
-	["a"] = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Action" },
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 	["w"] = { "<cmd>w<CR>", "Write" },
 	["q"] = { '<cmd>lua require("user.functions").smart_quit()<CR>', "Quit" },
 	["v"] = { '<cmd>lua require("user.telescope").edit_neovim()<CR>', "Edit neovim config" },
 	["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
-	["z"] = { "<cmd>ZenMode<cr>", "Zen" },
 	["b"] = { "<cmd>Browse<cr>", "Browse" },
-	["="] = { "<cmd>NvimTreeResize +5<cr>", "Inc. explorer width" },
-	["-"] = { "<cmd>NvimTreeResize -5<cr>", "Dec explorer width" },
 	["/"] = { '<cmd>lua require("Comment.api").toggle_current_linewise()<CR>', "Comment" },
+	[";"] = { "<cmd>Alpha<CR>", "Dashboard" },
 
 	s = {
 		name = "Split",
@@ -180,7 +177,7 @@ local mappings = {
 			"<cmd>Telescope lsp_workspace_diagnostics<cr>",
 			"Workspace Diagnostics",
 		},
-		f = { "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", "Format" },
+		f = { "<cmd>lua vim.lsp.buf.format({async=true})<cr>", "Format" },
 		F = { "<cmd>LspToggleAutoFormat<cr>", "Toggle Autoformat" },
 		i = { "<cmd>LspInfo<cr>", "Info" },
 		h = { "<cmd>IlluminationToggle<cr>", "Toggle Doc HL" },
@@ -194,7 +191,6 @@ local mappings = {
 			"Prev Diagnostic",
 		},
 		l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
-		o = { "<cmd>SymbolsOutline<cr>", "Outline" },
 		q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
 		r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
 		R = { "<cmd>TroubleToggle lsp_references<cr>", "References" },
@@ -213,9 +209,8 @@ local mappings = {
 		["2"] = { ":2ToggleTerm<cr>", "2" },
 		["3"] = { ":3ToggleTerm<cr>", "3" },
 		["4"] = { ":4ToggleTerm<cr>", "4" },
-		n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
+    d = {"<cmd>TermExec cmd='bb start'<cr>", "Dev"},
 		t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
-		p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
 		f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
 		h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
 		v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
