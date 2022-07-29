@@ -112,6 +112,7 @@ return packer.startup(function(use)
 	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 	use("RRethy/vim-illuminate")
 	use("j-hui/fidget.nvim")
+  use "LunarVim/peek.lua"
 
 	-- TODO: set this up
 	use("nvim-lua/lsp_extensions.nvim")

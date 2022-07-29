@@ -1,7 +1,6 @@
 
 M = {}
 local opts = { noremap = true, silent = true }
-local term_opts = { silent = true }
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
@@ -21,13 +20,8 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "<C-q>", "<C-w>q", opts)
 
-
---resize
-keymap("n", "<c-[>", ":vertical resize -5<cr>", opts)
-keymap("n", "<c-]>", ":vertical resize +5<cr>", opts)
-
-keymap("n", "<leader>=", ":NvimTreeResize +5<cr>",opts)
-keymap("n", "<leader>-", ":NvimTreeResize -5<cr>",opts)
+keymap("n", "<leader>=", ":vertical resize -5<cr>",opts)
+keymap("n", "<leader>-", ":vertical resize +5<cr>",opts)
 -- write file
 keymap("n", "<leader>w", ":w<CR>",opts)
 
@@ -45,20 +39,10 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- telescope
 keymap("n", "<leader>fk", ":Telescope keymaps<CR>", opts)
--- keymap("n", "<RightMouse>", ":Alpha<CR>", opts)
---
-
--- Move text up and down
--- keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
--- keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
-
--- Insert --
--- Press jk fast to enter
--- keymap("i", "jk", "<ESC>", opts)
 
 -- Visual --
 -- Stay in indent mode
--- keymap("v", "<", "<gv", opts)
--- keymap("v", ">", ">gv", opts)
+keymap("v", "<", "<gv", opts)
+keymap("v", ">", ">gv", opts)
 -- keymap("v", "p", '"_dP', opts)
 --

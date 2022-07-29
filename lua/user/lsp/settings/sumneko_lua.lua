@@ -1,11 +1,6 @@
 return {
   settings = {
     Lua = {
-      type = {
-        -- weakUnionCheck = true,
-        -- weakNilCheck = true,
-        -- castNumberToInteger = true,
-      },
       format = {
         enable = false,
       },
