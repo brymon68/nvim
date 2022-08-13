@@ -15,9 +15,9 @@ null_ls.setup {
   sources = {
     formatting.prettier.with {
       extra_filetypes = { "toml", "json", "tsx", "tsx", "jsx", "js"},
-      extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote"  },
+      extra_args = {"--single-quote", "--jsx-single-quote"  },
     },
-    formatting.black.with { extra_args = { "--fast" } },
+    formatting.black.with { extra_args = { "--line-length", "79" } },
     formatting.stylua,
     formatting.eslint,
     formatting.shfmt,

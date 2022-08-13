@@ -22,6 +22,5 @@ require("user.whichkey")
 require("user.project")
 require "user.peek"
 
-
 -- this will stop random things highlighting that shouldn't
-require("user.illuminate")
+ require("user.illuminate")

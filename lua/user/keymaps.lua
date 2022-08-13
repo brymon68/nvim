@@ -25,6 +25,9 @@ keymap("n", "<leader>-", ":vertical resize +5<cr>",opts)
 -- write file
 keymap("n", "<leader>w", ":w<CR>",opts)
 
+-- exit enter mode
+keymap("t", "<ESC>", "<C-\\><C-N><CR>", opts)
+
 -- Resize with arrows
 -- keymap("n", "<C-Up>", ":resize -2<CR>", opts)
 -- keymap("n", "<C-Down>", ":resize +2<CR>", opts)

@@ -91,7 +91,6 @@ return packer.startup(function(use)
 		"catppuccin/nvim",
 		as = "catppuccin",
 	})
-	-- vim.cmd([[colorscheme catppuccin]])
 	-- cmp plugins
 	use({ "hrsh7th/nvim-cmp" })
 	use("hrsh7th/cmp-buffer") -- buffer completions
@@ -115,11 +114,11 @@ return packer.startup(function(use)
   use "LunarVim/peek.lua"
 
 	-- TODO: set this up
-	use("nvim-lua/lsp_extensions.nvim")
+  use "ray-x/lsp_signature.nvim"
   -- cutlass
-  use({
-    "gbprod/cutlass.nvim",
-  })
+  -- use({
+  --   "gbprod/cutlass.nvim",
+  -- })
 
 	-- Typescript TODO: set this up, also add keybinds to ftplugin
 	use("jose-elias-alvarez/typescript.nvim")

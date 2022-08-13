@@ -146,7 +146,7 @@ local mappings = {
 		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
 		c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
 		f = {
-			"<cmd>lua require('telescope.builtin').find_files()<cr>",
+			'<cmd>lua require("telescope.builtin").find_files { find_command = { "rg", "--color=never", "--files" }, }<cr>',
 			"Find files",
 		},
 		g = { "<cmd>Telescope live_grep<cr>", "Find Text" },

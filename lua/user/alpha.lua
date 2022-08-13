@@ -20,8 +20,9 @@ dashboard.section.buttons.val = {
     "  Recent projects",
     ":lua require('telescope').extensions.projects.projects()<CR>"
   ),
-  dashboard.button("n", "  New File", "<CMD>quit<CR>"),
-  dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
+  dashboard.button("n", "  New File", "<CMD>ene!<CR>"),
+  -- dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
+  dashboard.button("f", "  Find file", '<cmd>lua require("telescope.builtin").find_files { find_command = { "rg", "--color=never", "--files" }, }<CR>'),
   dashboard.button("t", "  Search text", ":Telescope live_grep <CR>"),
   dashboard.button("r", "  Find recent file", ":Telescope oldfiles <CR>"),
   dashboard.button("e", "  Edit Configuration", "<cmd>lua require('user.telescope').edit_neovim()<CR>"),

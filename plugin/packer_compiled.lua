@@ -144,11 +144,6 @@ _G.packer_plugins = {
     path = "/Users/brycesec/.local/share/nvim/site/pack/packer/start/copilot-cmp",
     url = "https://github.com/zbirenbaum/copilot-cmp"
   },
-  ["cutlass.nvim"] = {
-    loaded = true,
-    path = "/Users/brycesec/.local/share/nvim/site/pack/packer/start/cutlass.nvim",
-    url = "https://github.com/gbprod/cutlass.nvim"
-  },
   ["cybu.nvim"] = {
     loaded = true,
     path = "/Users/brycesec/.local/share/nvim/site/pack/packer/start/cybu.nvim",
@@ -189,15 +184,10 @@ _G.packer_plugins = {
     path = "/Users/brycesec/.local/share/nvim/site/pack/packer/start/jaq-nvim",
     url = "https://github.com/is0n/jaq-nvim"
   },
-  ["lir.nvim"] = {
+  ["lsp_signature.nvim"] = {
     loaded = true,
-    path = "/Users/brycesec/.local/share/nvim/site/pack/packer/start/lir.nvim",
-    url = "https://github.com/tamago324/lir.nvim"
-  },
-  ["lsp_extensions.nvim"] = {
-    loaded = true,
-    path = "/Users/brycesec/.local/share/nvim/site/pack/packer/start/lsp_extensions.nvim",
-    url = "https://github.com/nvim-lua/lsp_extensions.nvim"
+    path = "/Users/brycesec/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim",
+    url = "https://github.com/ray-x/lsp_signature.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
@@ -293,6 +283,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/brycesec/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
+  },
+  ["peek.lua"] = {
+    loaded = true,
+    path = "/Users/brycesec/.local/share/nvim/site/pack/packer/start/peek.lua",
+    url = "https://github.com/LunarVim/peek.lua"
   },
   playground = {
     loaded = true,

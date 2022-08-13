@@ -1,4 +1,3 @@
-
 M = {}
 local status_ok, lualine = pcall(require, "lualine")
 if not status_ok then
@@ -100,6 +99,36 @@ local diff = {
 
 local filetype = {
   "filetype",
+  fmt = function(str)
+    local ui_filetypes = {
+      "help",
+      "packer",
+      "neogitstatus",
+      "NvimTree",
+      "lir",
+      "Outline",
+      "spectre_panel",
+      "toggleterm",
+      "DressingSelect",
+    }
+
+    if str == "toggleterm" then
+      -- 
+      local term = "%#SLTermIcon#"
+        .. " "
+        .. "%*"
+        .. "%#SLFG#"
+        .. vim.api.nvim_buf_get_var(0, "toggle_number")
+        .. "%*"
+      return term
+    end
+
+    if contains(ui_filetypes, str) then
+      return ""
+    else
+      return str
+    end
+  end,
   icons_enabled = true,
 }
 
