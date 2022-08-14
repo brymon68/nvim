@@ -10,7 +10,6 @@ require("user.telescope")
 require("user.treesitter")
 require("user.autopairs")
 require("user.autocommands")
-require("user.comment")
 require("user.gitsigns")
 require("user.lualine")
 require("user.nvim-tree")
@@ -23,4 +22,4 @@ require("user.project")
 require "user.peek"
 
 -- this will stop random things highlighting that shouldn't
- require("user.illuminate")
+require("user.illuminate")

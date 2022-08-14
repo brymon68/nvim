@@ -112,7 +112,7 @@ local mappings = {
 	["v"] = { '<cmd>lua require("user.telescope").edit_neovim()<CR>', "Edit neovim config" },
 	["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
 	["b"] = { "<cmd>Browse<cr>", "Browse" },
-	["/"] = { '<cmd>lua require("Comment.api").toggle_current_linewise()<CR>', "Comment" },
+	["/"] = { '<cmd>lua require("Comment.api").toggle.linewise()<CR>', "Comment" },
 	[";"] = { "<cmd>Alpha<CR>", "Dashboard" },
 
 	s = {
@@ -232,7 +232,7 @@ local vopts = {
 	nowait = true, -- use `nowait` when creating keymaps
 }
 local vmappings = {
-	["/"] = { '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>', "Comment" },
+	["/"] = { '<ESC><CMD>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>', "Comment" },
 }
 
 which_key.setup(setup)

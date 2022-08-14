@@ -11,7 +11,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 keymap("n", "<C-Space>", "<cmd>WhichKey \\<leader><cr>", opts)
 keymap("n", "<C-i>", "<C-i>", opts)
-
+keymap("n", "<leader>/>", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
 -- Normal --
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)

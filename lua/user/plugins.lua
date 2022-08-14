@@ -48,42 +48,39 @@ return packer.startup(function(use)
 	use("akinsho/bufferline.nvim")
 	use("famiu/bufdelete.nvim")
 	use("numToStr/Comment.nvim")
+	use("goolord/alpha-nvim")
+	use("folke/which-key.nvim")
+	use("kyazdani42/nvim-tree.lua")
 	use("nvim-lua/popup.nvim")
 	use("christianchiarulli/lualine.nvim")
 	use("akinsho/toggleterm.nvim")
 	use("lewis6991/impatient.nvim")
 	use("lukas-reineke/indent-blankline.nvim")
-	-- Lua
 	use("kylechui/nvim-surround")
-	-- Lua
 	use({
 		"abecodes/tabout.nvim",
 		wants = { "nvim-treesitter" }, -- or require if not used so far
 	})
-	use("NvChad/nvim-colorizer.lua")
+  use("NvChad/nvim-colorizer.lua")
 	use("windwp/nvim-spectre")
 	use("kevinhwang91/nvim-bqf")
 	use("MattesGroeger/vim-bookmarks")
-
-	-- UI
-	use("stevearc/dressing.nvim")
+ --
+	-- -- UI
+	-- use("stevearc/dressing.nvim")
 	use("ghillb/cybu.nvim")
 	use({
 		"SmiteshP/nvim-navic",
 		requires = "neovim/nvim-lspconfig",
 	})
-
+ --
 	use("rcarriga/nvim-notify")
 	use("kyazdani42/nvim-web-devicons")
-	use("kyazdani42/nvim-tree.lua")
 	-- use("tamago324/lir.nvim")
-	use("goolord/alpha-nvim")
-	use("folke/which-key.nvim")
-	use("folke/zen-mode.nvim")
 	use("karb94/neoscroll.nvim")
 	use("folke/todo-comments.nvim")
 	use("andymass/vim-matchup")
-	use("is0n/jaq-nvim")
+	-- use("is0n/jaq-nvim")
 
 	-- Colorschemes
 	use("folke/tokyonight.nvim")
@@ -95,17 +92,11 @@ return packer.startup(function(use)
 	use({ "hrsh7th/nvim-cmp" })
 	use("hrsh7th/cmp-buffer") -- buffer completions
 	use("hrsh7th/cmp-path") -- path completions
-	use("saadparwaiz1/cmp_luasnip") -- snippet completions
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-emoji")
 	use("hrsh7th/cmp-nvim-lua")
-	use("zbirenbaum/copilot-cmp")
-
-	-- snippets
-	use("L3MON4D3/LuaSnip") --snippet engine
-	use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
-
-	-- LSP
+ --
+	-- -- LSP
 	use("neovim/nvim-lspconfig") -- enable LSP
 	use("williamboman/nvim-lsp-installer") -- simple to use language server installer
 	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
@@ -113,20 +104,18 @@ return packer.startup(function(use)
 	use("j-hui/fidget.nvim")
   use "LunarVim/peek.lua"
 
-	-- TODO: set this up
   use "ray-x/lsp_signature.nvim"
   -- cutlass
-  -- use({
-  --   "gbprod/cutlass.nvim",
-  -- })
+  use({
+    "gbprod/cutlass.nvim",
+  })
+ -- Typescript TODO: set this up, also add keybinds to ftplugin
+ use("jose-elias-alvarez/typescript.nvim")
 
-	-- Typescript TODO: set this up, also add keybinds to ftplugin
-	use("jose-elias-alvarez/typescript.nvim")
-
-	-- Telescope
-	use("nvim-telescope/telescope.nvim")
-	use("tom-anders/telescope-vim-bookmarks.nvim")
-	use("nvim-telescope/telescope-media-files.nvim")
+-- Telescope
+ use("nvim-telescope/telescope.nvim")
+ use("tom-anders/telescope-vim-bookmarks.nvim")
+ use("nvim-telescope/telescope-media-files.nvim")
     use {
       "ahmedkhalf/project.nvim",
       config = function()
@@ -137,19 +126,15 @@ return packer.startup(function(use)
         }
       end
     }
-	use("lalitmee/browse.nvim")
+ use("lalitmee/browse.nvim")
 
-	-- Treesitter
-	use("nvim-treesitter/nvim-treesitter")
-	use("JoosepAlviste/nvim-ts-context-commentstring")
-	use("p00f/nvim-ts-rainbow")
-	use("nvim-treesitter/playground")
-	--use "windwp/nvim-ts-autotag"
-
-	-- Git
-	use("lewis6991/gitsigns.nvim")
-
-	use({ "christianchiarulli/JABS.nvim" })
+ -- Treesitter
+ use("nvim-treesitter/nvim-treesitter")
+ use("JoosepAlviste/nvim-ts-context-commentstring")
+ use("p00f/nvim-ts-rainbow")
+ use("nvim-treesitter/playground")
+	-- -- Git
+ use("lewis6991/gitsigns.nvim")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
