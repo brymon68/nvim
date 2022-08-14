@@ -19,7 +19,7 @@ vim.cmd([[
 ]])
 
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-	pattern = { "*.ts", "*.tsx", "*.js", "*.jsx", "*.py", "*.json"},
+	pattern = { "*.ts", "*.tsx", "*.js", "*.jsx", "*.py", "*.json", "*.lua"},
 	callback = function()
 		vim.lsp.buf.format({ async = false })
 	end,

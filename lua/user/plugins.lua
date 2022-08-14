@@ -61,26 +61,24 @@ return packer.startup(function(use)
 		"abecodes/tabout.nvim",
 		wants = { "nvim-treesitter" }, -- or require if not used so far
 	})
-  use("NvChad/nvim-colorizer.lua")
+	use("NvChad/nvim-colorizer.lua")
 	use("windwp/nvim-spectre")
 	use("kevinhwang91/nvim-bqf")
 	use("MattesGroeger/vim-bookmarks")
- --
+
 	-- -- UI
-	-- use("stevearc/dressing.nvim")
 	use("ghillb/cybu.nvim")
 	use({
 		"SmiteshP/nvim-navic",
 		requires = "neovim/nvim-lspconfig",
 	})
- --
+	--
+
 	use("rcarriga/nvim-notify")
 	use("kyazdani42/nvim-web-devicons")
-	-- use("tamago324/lir.nvim")
 	use("karb94/neoscroll.nvim")
 	use("folke/todo-comments.nvim")
 	use("andymass/vim-matchup")
-	-- use("is0n/jaq-nvim")
 
 	-- Colorschemes
 	use("folke/tokyonight.nvim")
@@ -95,46 +93,45 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-emoji")
 	use("hrsh7th/cmp-nvim-lua")
- --
+	--
 	-- -- LSP
 	use("neovim/nvim-lspconfig") -- enable LSP
 	use("williamboman/nvim-lsp-installer") -- simple to use language server installer
 	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 	use("RRethy/vim-illuminate")
 	use("j-hui/fidget.nvim")
-  use "LunarVim/peek.lua"
+	use("LunarVim/peek.lua")
 
-  use "ray-x/lsp_signature.nvim"
-  -- cutlass
-  use({
-    "gbprod/cutlass.nvim",
-  })
- -- Typescript TODO: set this up, also add keybinds to ftplugin
- use("jose-elias-alvarez/typescript.nvim")
+	use("ray-x/lsp_signature.nvim")
+	-- cutlass
+	use({
+		"gbprod/cutlass.nvim",
+	})
+	-- Typescript TODO: set this up, also add keybinds to ftplugin
+	use("jose-elias-alvarez/typescript.nvim")
 
--- Telescope
- use("nvim-telescope/telescope.nvim")
- use("tom-anders/telescope-vim-bookmarks.nvim")
- use("nvim-telescope/telescope-media-files.nvim")
-    use {
-      "ahmedkhalf/project.nvim",
-      config = function()
-        require("project_nvim").setup {
-          -- your configuration comes here
-          -- or leave it empty to use the default settings
-          -- refer to the configuration section below
-        }
-      end
-    }
- use("lalitmee/browse.nvim")
+	-- Telescope
+	use("nvim-telescope/telescope.nvim")
+	use("tom-anders/telescope-vim-bookmarks.nvim")
+	use("nvim-telescope/telescope-media-files.nvim")
+	use({
+		"ahmedkhalf/project.nvim",
+		config = function()
+			require("project_nvim").setup({
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			})
+		end,
+	})
 
- -- Treesitter
- use("nvim-treesitter/nvim-treesitter")
- use("JoosepAlviste/nvim-ts-context-commentstring")
- use("p00f/nvim-ts-rainbow")
- use("nvim-treesitter/playground")
+	-- Treesitter
+	use("nvim-treesitter/nvim-treesitter")
+	use("JoosepAlviste/nvim-ts-context-commentstring")
+	use("p00f/nvim-ts-rainbow")
+	use("nvim-treesitter/playground")
 	-- -- Git
- use("lewis6991/gitsigns.nvim")
+	use("lewis6991/gitsigns.nvim")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

@@ -74,25 +74,10 @@ _G.packer_plugins = {
     path = "/Users/brycesec/.local/share/nvim/site/pack/packer/start/Comment.nvim",
     url = "https://github.com/numToStr/Comment.nvim"
   },
-  ["JABS.nvim"] = {
-    loaded = true,
-    path = "/Users/brycesec/.local/share/nvim/site/pack/packer/start/JABS.nvim",
-    url = "https://github.com/christianchiarulli/JABS.nvim"
-  },
-  LuaSnip = {
-    loaded = true,
-    path = "/Users/brycesec/.local/share/nvim/site/pack/packer/start/LuaSnip",
-    url = "https://github.com/L3MON4D3/LuaSnip"
-  },
   ["alpha-nvim"] = {
     loaded = true,
     path = "/Users/brycesec/.local/share/nvim/site/pack/packer/start/alpha-nvim",
     url = "https://github.com/goolord/alpha-nvim"
-  },
-  ["browse.nvim"] = {
-    loaded = true,
-    path = "/Users/brycesec/.local/share/nvim/site/pack/packer/start/browse.nvim",
-    url = "https://github.com/lalitmee/browse.nvim"
   },
   ["bufdelete.nvim"] = {
     loaded = true,
@@ -134,35 +119,20 @@ _G.packer_plugins = {
     path = "/Users/brycesec/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
-  cmp_luasnip = {
+  ["cutlass.nvim"] = {
     loaded = true,
-    path = "/Users/brycesec/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
-    url = "https://github.com/saadparwaiz1/cmp_luasnip"
-  },
-  ["copilot-cmp"] = {
-    loaded = true,
-    path = "/Users/brycesec/.local/share/nvim/site/pack/packer/start/copilot-cmp",
-    url = "https://github.com/zbirenbaum/copilot-cmp"
+    path = "/Users/brycesec/.local/share/nvim/site/pack/packer/start/cutlass.nvim",
+    url = "https://github.com/gbprod/cutlass.nvim"
   },
   ["cybu.nvim"] = {
     loaded = true,
     path = "/Users/brycesec/.local/share/nvim/site/pack/packer/start/cybu.nvim",
     url = "https://github.com/ghillb/cybu.nvim"
   },
-  ["dressing.nvim"] = {
-    loaded = true,
-    path = "/Users/brycesec/.local/share/nvim/site/pack/packer/start/dressing.nvim",
-    url = "https://github.com/stevearc/dressing.nvim"
-  },
   ["fidget.nvim"] = {
     loaded = true,
     path = "/Users/brycesec/.local/share/nvim/site/pack/packer/start/fidget.nvim",
     url = "https://github.com/j-hui/fidget.nvim"
-  },
-  ["friendly-snippets"] = {
-    loaded = true,
-    path = "/Users/brycesec/.local/share/nvim/site/pack/packer/start/friendly-snippets",
-    url = "https://github.com/rafamadriz/friendly-snippets"
   },
   ["gitsigns.nvim"] = {
     loaded = true,
@@ -178,11 +148,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/brycesec/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
-  },
-  ["jaq-nvim"] = {
-    loaded = true,
-    path = "/Users/brycesec/.local/share/nvim/site/pack/packer/start/jaq-nvim",
-    url = "https://github.com/is0n/jaq-nvim"
   },
   ["lsp_signature.nvim"] = {
     loaded = true,
@@ -370,11 +335,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/brycesec/.local/share/nvim/site/pack/packer/start/which-key.nvim",
     url = "https://github.com/folke/which-key.nvim"
-  },
-  ["zen-mode.nvim"] = {
-    loaded = true,
-    path = "/Users/brycesec/.local/share/nvim/site/pack/packer/start/zen-mode.nvim",
-    url = "https://github.com/folke/zen-mode.nvim"
   }
 }
 

@@ -1,8 +1,8 @@
 require("user.alpha")
+require("user.cutlass")
 require("user.options")
 require("user.keymaps")
 require("user.plugins")
-require("user.browse")
 require("user.colorscheme")
 require("user.cmp")
 require("user.lsp")
@@ -19,7 +19,7 @@ require("user.impatient")
 require("user.indentline")
 require("user.whichkey")
 require("user.project")
-require "user.peek"
+require("user.peek")
 
 -- this will stop random things highlighting that shouldn't
 require("user.illuminate")
