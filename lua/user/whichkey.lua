@@ -209,7 +209,7 @@ local mappings = {
 		["2"] = { ":2ToggleTerm<cr>", "2" },
 		["3"] = { ":3ToggleTerm<cr>", "3" },
 		["4"] = { ":4ToggleTerm<cr>", "4" },
-    d = {"<cmd>TermExec cmd='bb start'<cr>", "Dev"},
+		d = { "<cmd>TermExec cmd='bb start'<cr>", "Dev" },
 		t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
 		f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
 		h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },

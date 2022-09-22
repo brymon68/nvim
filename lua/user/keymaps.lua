@@ -1,4 +1,3 @@
-
 M = {}
 local opts = { noremap = true, silent = true }
 -- Shorten function name
@@ -20,10 +19,10 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "<C-q>", "<C-w>q", opts)
 
-keymap("n", "<leader>=", ":vertical resize -5<cr>",opts)
-keymap("n", "<leader>-", ":vertical resize +5<cr>",opts)
+keymap("n", "<leader>=", ":vertical resize -5<cr>", opts)
+keymap("n", "<leader>-", ":vertical resize +5<cr>", opts)
 -- write file
-keymap("n", "<leader>w", ":w<CR>",opts)
+keymap("n", "<leader>w", ":w<CR>", opts)
 
 -- exit enter mode
 keymap("t", "<ESC>", "<C-\\><C-N><CR>", opts)
@@ -34,7 +33,7 @@ keymap("t", "<ESC>", "<C-\\><C-N><CR>", opts)
 -- keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 -- keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 --nvimtree
-keymap("n", "<leader>e", ":NvimTreeToggle<CR>",opts)
+keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- Naviagate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
@@ -49,3 +48,5 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 -- keymap("v", "p", '"_dP', opts)
 --
+-- paste
+keymap("x", "<leader>p", '"_dP', opts)

@@ -1,5 +1,5 @@
 require("user.alpha")
-require("user.cutlass")
+-- require("user.cutlass")
 require("user.options")
 require("user.keymaps")
 require("user.plugins")
