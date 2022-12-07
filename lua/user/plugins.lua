@@ -1,6 +1,5 @@
 local fn = vim.fn
 
-
 -- Automatically install packer
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -87,7 +86,7 @@ return packer.startup(function(use)
 		"catppuccin/nvim",
 		as = "catppuccin",
 	})
-	use("pineapplegiant/spaceduck")
+	use("rebelot/kanagawa.nvim")
 
 	-- cmp plugins
 	use({ "hrsh7th/nvim-cmp" })
