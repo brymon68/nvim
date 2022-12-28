@@ -111,7 +111,7 @@ local mappings = {
 	["q"] = { '<cmd>lua require("user.functions").smart_quit()<CR>', "Quit" },
 	["v"] = { '<cmd>lua require("user.telescope").edit_neovim()<CR>', "Edit neovim config" },
 	["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
-	["b"] = { "<cmd>Browse<cr>", "Browse" },
+	["b"] = { "<cmd>SymbolsOutline<cr>", "SymbolOutline" },
 	["/"] = { '<cmd>lua require("Comment.api").toggle.linewise()<CR>', "Comment" },
 	[";"] = { "<cmd>Alpha<CR>", "Dashboard" },
 

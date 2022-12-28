@@ -9,8 +9,7 @@ if not snip_status_ok then
 end
 
 -- local tabnine_status_ok, _ = pcall(require, "user.tabnine")
--- if not tabnine_status_ok then
---   print("bruh2")
+-- if not tabnine_status_ok then print("bruh2")
 --   return
 -- end
 
@@ -60,7 +59,6 @@ local kind_icons = {
 	TypeParameter = "",
 }
 
-vim.api.nvim_set_hl(0, "CmpItemKindTabnine", { fg = "#CA42F0" })
 vim.api.nvim_set_hl(0, "CmpItemKindEmoji", { fg = "#FDE030" })
 vim.api.nvim_set_hl(0, "CmpItemKindCrate", { fg = "#F64D00" })
 

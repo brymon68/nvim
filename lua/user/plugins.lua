@@ -81,12 +81,12 @@ return packer.startup(function(use)
 	use("andymass/vim-matchup")
 
 	-- Colorschemes
-	use("folke/tokyonight.nvim")
 	use({
 		"catppuccin/nvim",
 		as = "catppuccin",
 	})
-	use("rebelot/kanagawa.nvim")
+	use("navarasu/onedark.nvim")
+	use("brymon68/rocky")
 
 	-- cmp plugins
 	use({ "hrsh7th/nvim-cmp" })
@@ -108,6 +108,8 @@ return packer.startup(function(use)
 	use("RRethy/vim-illuminate")
 	use("j-hui/fidget.nvim")
 	use("LunarVim/peek.lua")
+
+	use("simrat39/symbols-outline.nvim")
 
 	use("ray-x/lsp_signature.nvim")
 	-- cutlass
