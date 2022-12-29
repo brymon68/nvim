@@ -14,20 +14,16 @@ local function contains(t, value)
 	return false
 end
 
-vim.api.nvim_set_hl(0, "SLGitIcon", { fg = "#E8AB53", bg = "#32363e" })
-vim.api.nvim_set_hl(0, "SLTermIcon", { fg = "#b668cd", bg = "#282c34" })
-vim.api.nvim_set_hl(0, "SLBranchName", { fg = "#abb2bf", bg = "#32363e", bold = false })
--- vim.api.nvim_set_hl(0, "SLProgress", { fg = "#D7BA7D", bg = "#252525" })
-vim.api.nvim_set_hl(0, "SLProgress", { fg = "#abb2bf", bg = "#32363e" })
-vim.api.nvim_set_hl(0, "SLFG", { fg = "#abb2bf", bg = "#282c34" })
-vim.api.nvim_set_hl(0, "SLSeparator", { fg = "#6b727f", bg = "#282c34" })
-vim.api.nvim_set_hl(0, "SLLSP", { fg = "#5e81ac", bg = "#282c34" })
+vim.api.nvim_set_hl(0, "SLGitIcon", { fg = "#E8AB53", bg = "#20262c" })
+vim.api.nvim_set_hl(0, "SLTermIcon", { fg = "#b668cd", bg = "#20262c" })
+vim.api.nvim_set_hl(0, "SLBranchName", { fg = "#abb2bf", bg = "#20262c", bold = false })
+vim.api.nvim_set_hl(0, "SLProgress", { fg = "#abb2bf", bg = "#20262c" })
+vim.api.nvim_set_hl(0, "SLFG", { fg = "#abb2bf", bg = "#20262c" })
+vim.api.nvim_set_hl(0, "SLSeparator", { fg = "#6b727f", bg = "#20262c" })
+vim.api.nvim_set_hl(0, "SLLSP", { fg = "#5e81ac", bg = "#20262c" })
+vim.api.nvim_set_hl(0, "SLError", { fg = "#abb2bf", bg = "#20262c" })
+vim.api.nvim_set_hl(0, "SLWarning", { fg = "#abb2bf", bg = "#20262c" })
 -- darkerplus
--- vim.api.nvim_set_hl(0, "SLGitIcon", { fg = "#E8AB53", bg = "#303030" })
--- vim.api.nvim_set_hl(0, "SLBranchName", { fg = "#abb2bf", bg = "#303030", bold = false })
--- -- vim.api.nvim_set_hl(0, "SLProgress", { fg = "#D7BA7D", bg = "#252525" })
--- vim.api.nvim_set_hl(0, "SLProgress", { fg = "#abb2bf", bg = "#303030" })
--- vim.api.nvim_set_hl(0, "SLSeparator", { fg = "#545862", bg = "#252525" })
 local mode_color = {
 	n = "#519fdf",
 	i = "#c18a56",
@@ -82,7 +78,7 @@ local diagnostics = {
 	sources = { "nvim_diagnostic" },
 	sections = { "error", "warn" },
 	symbols = { error = " ", warn = " " },
-	colored = false,
+	colored = true,
 	update_in_insert = false,
 	always_visible = true,
 }

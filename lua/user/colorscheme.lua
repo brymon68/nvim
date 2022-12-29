@@ -40,6 +40,7 @@ require("onedark").setup({
 		bg = "#20262c",
 		bg0 = "#20262c",
 		bg1 = "#20262c",
+		bg_d = "#20262c",
 	}, -- Override default colors
 	highlights = {
 		["@constructor"] = { fg = "$light_grey" },
