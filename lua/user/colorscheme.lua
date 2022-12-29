@@ -9,7 +9,7 @@ end
 
 require("onedark").setup({
 	-- Main options --
-	style = "dark", -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+	style = "deep", -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
 	transparent = false, -- Show/hide background
 	term_colors = true, -- Change terminal color as per the selected theme style
 	ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
@@ -32,7 +32,7 @@ require("onedark").setup({
 
 	-- Lualine options --
 	lualine = {
-		transparent = false, -- lualine center bar transparency
+		transparent = true, -- lualine center bar transparency
 	},
 
 	-- Custom Highlights --
@@ -41,7 +41,11 @@ require("onedark").setup({
 		bg0 = "#20262c",
 		bg1 = "#20262c",
 	}, -- Override default colors
-	highlights = {}, -- Override highlight groups
+	highlights = {
+		["@constructor"] = { fg = "$light_grey" },
+		["@namespace"] = { fg = "$light_grey" },
+		["@constant"] = { fg = "$light_grey" },
+	}, -- Override highlight groups
 
 	-- Plugins Config --
 	diagnostics = {
@@ -50,3 +54,4 @@ require("onedark").setup({
 		background = true, -- use background color for virtual text
 	},
 })
+require("onedark").load()
