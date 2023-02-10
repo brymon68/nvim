@@ -14,9 +14,7 @@ local code_actions = null_ls.builtins.code_actions
 null_ls.setup({
 	debug = true,
 	sources = {
-		formatting.eslint.with({
-			args = { "src/", "--ext", ".js,.jsx", "--fix" },
-		}),
+		diagnostics.eslint,
 		formatting.prettier.with({
 			extra_filetypes = { "toml", "json", "tsx", "tsx", "jsx", "js" },
 		}),

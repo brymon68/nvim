@@ -97,10 +97,6 @@ local m_mappings = {
 	j = { "<cmd>silent BookmarkNext<cr>", "Next" },
 	k = { "<cmd>silent BookmarkPrev<cr>", "Prev" },
 	S = { "<cmd>silent BookmarkShowAll<cr>", "Prev" },
-	s = {
-		"<cmd>lua require('telescope').extensions.vim_bookmarks.all({ hide_filename=false, prompt_title=\"bookmarks\", shorten_path=false })<cr>",
-		"Show",
-	},
 	["q"] = { "<cmd>lua require('user.functions').smart_quit()<CR>", "Quit" },
 	x = { "<cmd>BookmarkClearAll<cr>", "Clear All" },
 }
@@ -143,8 +139,9 @@ local mappings = {
 
 	f = {
 		name = "Find",
-		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
+		b = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Buffer fuzzyfind" },
 		c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
+		d = { "<cmd>Telescope diagnostics bufnr=0<cr>", "Diganostics" },
 		f = {
 			'<cmd>lua require("telescope.builtin").find_files { find_command = { "rg", "--color=never", "--files", "--hidden" }, }<cr>',
 			"Find files",

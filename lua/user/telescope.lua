@@ -69,7 +69,7 @@ telescope.setup({
 		},
 		borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
 		layout_config = {
-			width = 0.75,
+			width = 0.90,
 			preview_cutoff = 120,
 			horizontal = {
 				preview_width = function(_, cols, _)
